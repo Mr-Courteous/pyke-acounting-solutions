@@ -1,0 +1,61 @@
+:root {
+  /* Color defaults below mirror src/theme.js, which is the single file
+     to edit for brand colors — applyTheme() (called in main.jsx)
+     overwrites these at runtime, so this block is documentation plus a
+     safe fallback, not the source of truth. */
+  --ink: #17211c;
+  --ink-soft: #4a5650;
+  --paper: #e9ece4;
+  --surface: #fbfaf5;
+  --line: #c9c2ac;
+  --line-soft: #dcd8c8;
+
+  --ledger-green: #1f4d3d;
+  --ledger-green-hover: #163a2e;
+  --brass: #a9812c;
+  --signal-red: #8b3a3a;
+
+  --ledger-green-tint: #e2ebe6;
+  --brass-tint: #f3ead4;
+  --signal-red-tint: #f2e2e0;
+
+  /* Type */
+  --font-display: 'Newsreader', Georgia, serif;
+  --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --text-2xl: 1.75rem;
+  --text-xl: 1.25rem;
+  --text-lg: 1.0625rem;
+  --text-base: 0.9375rem;
+  --text-sm: 0.8125rem;
+  --text-xs: 0.75rem;
+
+  /* Layout */
+  --sidebar-width: 216px;
+  --radius: 3px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --space-4: 12px;
+    --space-5: 16px;
+    --space-6: 24px;
+    --space-7: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
