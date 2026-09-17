@@ -80,7 +80,10 @@ export const quickbooks = {
   // /connect is a redirect + cookie handshake, not a JSON call — the
   // caller should navigate to this URL directly (window.location.href),
   // not fetch() it.
-  connectUrl: '/api/quickbooks/connect',
+  get connectUrl() {
+    const baseUrl = import.meta.env.VITE_API_PROXY_TARGET || window.location.origin;
+    return new URL('/api/quickbooks/connect', baseUrl).toString();
+  },
   disconnect: () => request('/api/quickbooks/disconnect', { method: 'POST' }),
   backfill: (from, to) => request('/api/quickbooks/backfill', { params: { from, to } }),
 };
